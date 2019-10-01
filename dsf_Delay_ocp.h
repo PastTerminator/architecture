@@ -1,7 +1,7 @@
 /*!
- * @copyright   © 2017 UFAM - Universidade Federal do Amazonas.
+ * @copyright   ï¿½ 2017 UFAM - Universidade Federal do Amazonas.
  *
- * @brief       API em C++ para o periférico TPM, no modo delay.
+ * @brief       API em C++ para o perifï¿½rico TPM, no modo delay.
  *
  * @file        dsf_Delay_ocp.h
  * @version     1.0
@@ -11,36 +11,38 @@
  *              +board        FRDM-KL25Z da NXP.
  *              +processor    MKL25Z128VLK4 - ARM Cortex-M0+.
  *              +peripheral   TPM.
- *              +compiler     Kinetis® Design Studio IDE.
+ *              +compiler     Kinetisï¿½ Design Studio IDE.
  *              +manual       L25P80M48SF0RM, Rev.3, September 2012.
- *              +revisions    Versão (data): Descrição breve.
- *                             ++ 1.0 (6 Julho 2017): Versão inicial.
+ *              +revisions    Versï¿½o (data): Descriï¿½ï¿½o breve.
+ *                             ++ 1.0 (6 Julho 2017): Versï¿½o inicial.
  *
  * @section     AUTHORS & DEVELOPERS
  *              +institution  Universidade Federal do Amazonas.
- *              +courses      Engenharia da Computação / Engenharia Elétrica.
+ *              +courses      Engenharia da Computaï¿½ï¿½o / Engenharia Elï¿½trica.
  *              +teacher      Miguel Grimm <miguelgrimm@gmail.com>
- *              +student      Versão inicial:
+ *              +student      Versï¿½o inicial:
  *                             ++ Hamilton Nascimento <hdan_neto@hotmail.com>
  *
  * @section     LICENSE
  *
  *              GNU General Public License (GNU GPL).
  *
- *              Este programa é um software livre; Você pode redistribuí-lo
- *              e/ou modificá-lo de acordo com os termos do "GNU General Public
+ *              Este programa ï¿½ um software livre; Vocï¿½ pode redistribuï¿½-lo
+ *              e/ou modificï¿½-lo de acordo com os termos do "GNU General Public
  *              License" como publicado pela Free Software Foundation; Seja a
- *              versão 3 da licença, ou qualquer versão posterior.
+ *              versï¿½o 3 da licenï¿½a, ou qualquer versï¿½o posterior.
  *
- *              Este programa é distribuído na esperança de que seja útil,
- *              mas SEM QUALQUER GARANTIA; Sem a garantia implícita de
- *              COMERCIALIZAÇÃO OU USO PARA UM DETERMINADO PROPÓSITO.
+ *              Este programa ï¿½ distribuï¿½do na esperanï¿½a de que seja ï¿½til,
+ *              mas SEM QUALQUER GARANTIA; Sem a garantia implï¿½cita de
+ *              COMERCIALIZAï¿½ï¿½O OU USO PARA UM DETERMINADO PROPï¿½SITO.
  *              Veja o site da "GNU General Public License" para mais detalhes.
  *
  * @htmlonly    http://www.gnu.org/copyleft/gpl.html
  */
 
-#ifndef DSF_DELAY_OCP // verificar se há somente a definição DSF_DELAY_OCP
+// changing the basic concept of version control of Git and seeing what happen
+
+#ifndef DSF_DELAY_OCP // verificar se hï¿½ somente a definiï¿½ï¿½o DSF_DELAY_OCP
 #define DSF_DELAY_OCP
 
 #include <stdint.h>
@@ -50,45 +52,45 @@
 /*!
  *  @class    dsf_Delay_ocp.
  *
- *  @brief    A classe implementa o modo de operação delay, do periférico TPM.
+ *  @brief    A classe implementa o modo de operaï¿½ï¿½o delay, do perifï¿½rico TPM.
  *
- *  @details  Esta classe é derivada da classe mãe "dsf_TPMPeripheral_ocp" e
- *            implementa o modo de operação delay, podendo o usuário escolher
- *            entre um delay que "prende" e um delay que "não prende".
+ *  @details  Esta classe ï¿½ derivada da classe mï¿½e "dsf_TPMPeripheral_ocp" e
+ *            implementa o modo de operaï¿½ï¿½o delay, podendo o usuï¿½rio escolher
+ *            entre um delay que "prende" e um delay que "nï¿½o prende".
  *
  *
  */
 class dsf_Delay_ocp : public dsf_TPMPeripheral_ocp {
  public:
   /*!
-   * Construtor padrão da classe.
+   * Construtor padrï¿½o da classe.
    */
   explicit dsf_Delay_ocp(TPM_t::TPMNumber_t tpm = TPM_t::dsf_TPM0);
   /*!
-   * Método de configuração da classe.
+   * Mï¿½todo de configuraï¿½ï¿½o da classe.
    */
   void setFrequency(TPMDiv_t::TPMDiv divBase);
 
   /*!
-   * Métodos de inicialização de temporização.
+   * Mï¿½todos de inicializaï¿½ï¿½o de temporizaï¿½ï¿½o.
    */
   void waitDelay(uint16_t cycles);
   void startDelay(uint16_t cycles);
 
   /*!
-   * Métodos de checagem da temporização.
+   * Mï¿½todos de checagem da temporizaï¿½ï¿½o.
    */
   int timeoutDelay();
   void getCounter(uint16_t *value);
 
   /*!
-   * Método de cancelamento de temporização.
+   * Mï¿½todo de cancelamento de temporizaï¿½ï¿½o.
    */
   void cancelDelay();
 
  private:
   /*!
-   * Atributo de armazenamento do fator do divisor de frequência.
+   * Atributo de armazenamento do fator do divisor de frequï¿½ncia.
    */
   uint8_t freqDiv;
 };
