@@ -15,3 +15,5 @@ bool lpm_compare::compare(int countValue) {
 		return false;
 
 }
+
+

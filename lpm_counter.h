@@ -2,7 +2,7 @@
  * lpm_counter.h
  *
  *  Created on: 23/09/2019
- *      Author: joaob
+ *      Author: joaovicente
  */
 
 #include "stdint.h"
